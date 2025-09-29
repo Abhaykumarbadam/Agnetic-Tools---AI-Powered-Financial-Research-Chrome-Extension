@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Agnetic Tools",
+  "version": "1.0.0",
+  "description": "A simple side panel to run quick research and a small batch task. Built for India-focused news.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "notifications",
+    "sidePanel",
+    "downloads",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icon48.png"
+  },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "action": {
+    "default_title": "Open Agnetic Tools"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

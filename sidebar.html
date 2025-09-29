@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agnetic Tools</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="header-content">
+                    <h1>Agnetic Tools</h1>
+                </div>
+            </header>
+
+            <div class="main-content">
+                <!-- Quick Tools Input -->
+                <div id="taskInputSection" class="input-section">
+                    <div class="input-group">
+                        <textarea id="taskInput" placeholder="Enter input for tools, e.g., 'Research NIFTY 50 latest news and trend in India'"></textarea>
+                    </div>
+                    <div class="examples-row">
+                        <small>Examples (click to fill):</small>
+                        <div class="examples-list">
+                            <button class="example-chip" data-example="Research NIFTY 50 latest news and trend in India">Research NIFTY 50</button>
+                            <button id="btnExampleQA" class="example-chip" type="button">Q&A</button>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button id="btnRunResearch" class="btn-secondary">Run Research</button>
+                        <button id="btnRunBatch" class="btn-primary">Run Batch</button>
+                    </div>
+                </div>
+
+                <!-- Notifications Section removed (monitoring disabled) -->
+
+                <!-- Quick Actions Section removed (merged into input) -->
+
+                <!-- Settings Section -->
+                <div id="settingsSection" class="settings-section">
+                    <h3>Settings</h3>
+
+                    <div class="settings-tabs">
+                        <button class="tab-btn active" data-tab="logs">📜 Logs</button>
+                    </div>
+
+                    <!-- Logs Tab Content -->
+                    <div id="logs" class="tab-content active">
+                        <div class="setting-group">
+                            <h4>🧭 Agentic Logs</h4>
+                            <div class="settings-actions left no-border no-pt gap-8">
+                                <button id="btnLogsDownloadAll" class="btn-secondary">⬇️ Download All</button>
+                                <button id="btnLogsClear" class="btn-secondary">🗑️ Clear</button>
+                            </div>
+                            <div id="logsList" class="logs-list empty-state">No logs yet.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Research Modal -->
+        <div id="researchModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="rsTitle">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 id="rsTitle">Research Result</h3>
+                    <button id="rsClose" class="modal-close" aria-label="Close">✕</button>
+                </div>
+                <div id="rsBody" class="research-body">
+                    <div id="rsSummary" class="bt-stats mb-12">Preparing research…</div>
+                    <div id="rsArticles"></div>
+                    <div id="rsNote"><small>LLM synthesizes recent news and last-month price action into a short report.</small></div>
+                </div>
+                <div class="settings-actions mt-12">
+                    <button id="btnCopyLogs" class="btn-secondary">Copy Logs</button>
+                    <button id="btnDownloadLogs" class="btn-primary">Download Logs</button>
+                    <button id="btnSendResearchNotif" class="btn-secondary">Send to Notifications</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="config.js"></script>
+        <script src="sidebar.js"></script>
+    </body>
+    </html>
+
